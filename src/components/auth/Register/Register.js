@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react'
 import { withRouter } from 'react-router';
 import app from '../../../firebase';
+import { Link } from 'react-router-dom';
+import styles from './Register.module.css';
 
 const Register = ({ history }) => {
    const handleSignUp = useCallback(async event => {
@@ -14,19 +16,16 @@ const Register = ({ history }) => {
       }
    }, [history]);
    return (
-      <div>
-         <h1>Register</h1>
-         <form onSubmit={handleSignUp}>
-            <label>
-               Email
-               <input type="email" name='email' placeholder="Email" />
-            </label>
-            <label>
-               Password
-               <input type="password" name='password' placeholder='Password' />
-            </label>
-            <button type='submit'>Sign Up</button>
-         </form>
+      <div className={styles.registerContainer}>
+         <div className={styles.register}>
+            <h3 className={styles.heading}>CREATE AN ACCOUNT</h3>
+            <form onSubmit={handleSignUp} className={styles.registerForm}>
+               <input type="email" name='email' placeholder="Email" className={styles.input} />
+               <input type="password" name='password' placeholder='Password' className={styles.input} />
+               <button type='submit' className={styles.submit}>Sign Up</button>
+               <p className={styles.signInLink}>Already have an account? <Link to='/login' className={styles.signInLinkTag}>Sign In</Link></p>
+            </form>
+         </div>
       </div>
    )
 }

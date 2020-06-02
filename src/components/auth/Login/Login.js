@@ -2,6 +2,8 @@ import React, { useContext, useCallback } from 'react'
 import { withRouter, Redirect } from 'react-router';
 import app from '../../../firebase';
 import { AuthContext } from '../../../Auth';
+import { Link } from 'react-router-dom';
+import styles from './Login.module.css';
 
 const Login = ({ history }) => {
     const handleLogin = useCallback(async event => {
@@ -22,19 +24,17 @@ const Login = ({ history }) => {
     }
 
     return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={handleLogin}>
-                <label>
-                    Email
-               <input type="email" name='email' placeholder="Email" />
-                </label>
-                <label>
-                    Password
-               <input type="password" name='password' placeholder='Password' />
-                </label>
-                <button type='submit'>Login</button>
-            </form>
+        <div className={styles.loginContainer}>
+            <div className={styles.login}>
+                <h3 className={styles.heading}>SIGN IN TO YOUR ACCOUNT</h3>
+                <form onSubmit={handleLogin} className={styles.loginForm}>
+                    <input type="email" name='email' placeholder="Email" className={styles.input} />
+                    <input type="password" name='password' placeholder='Password' className={styles.input} />
+                    <br />
+                    <button type='submit' className={styles.submit}>SIGN IN</button>
+                    <p className={styles.signUpLink}>New here? <Link to='/register' className={styles.signUpLinkTag}>Sign Up</Link></p>
+                </form>
+            </div>
         </div>
     )
 }

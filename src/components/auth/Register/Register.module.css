@@ -1,0 +1,66 @@
+.registerContainer{
+  height: 100vh;
+  background: #6a62d2;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register{
+  width: 350px;
+  background: white;
+  box-shadow: 1px 1px 5px 10px rgba(0,0,0,0.01);
+  border-radius: 5px;
+  padding: 2em;
+}
+
+.registerForm{
+  display: flex;
+  flex-direction: column;
+}
+
+.heading{
+  margin: 0 0 1em 0;
+  font-family: 'Manrope', sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+  color: rgb(87, 87, 87);
+  font-weight: 800;
+}
+
+.input{
+  background: #e5e8ed;
+  margin: 0.5em 0;
+  border: 0px;
+  padding: 1em;
+  border-radius: 2px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.submit{
+  margin-top: 3em;
+  border: 0;
+  background: #746bde;
+  padding: 1em;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 2px;
+  border-radius: 2px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.signInLink{
+  text-align: center;
+  color: #9c9c9c;
+  margin-top: 2em;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9em;
+}
+
+.signInLinkTag{
+  text-decoration: none;
+  color: #6a62d2;
+  font-weight: 500;
+}
